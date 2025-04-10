@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Encuesta</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilo-encuesta.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilo-header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilo-footer.css'>
+
+    <link rel="icon" href="img/logo.png">
+
+</head>
+<body>
+    <header>
+		<a href="Index.html" class="logo">
+			<img src="img/logo.png" alt="Proble al cargar la imagen">
+			<p>La Inteligencia Artificial</p>
+		</a>
+		<!--Menu de navegación-->
+
+		<nav>
+			<a href="Index.html" class="nav-link">Inicio</a>
+			<a href="aplicaion-IA.html" class="nav-link">Aplicaciones de la IA</a>
+			<a href="Dilemas_eticos.html" class="nav-link">Dilemas Éticos</a>
+			<a href="Encuesta.html" class="nav-link">Encuesta</a>
+		</nav>	
+	</header>
+
+    <div class="encuesta-header">
+        Responde la siguiente encuesta
+    </div>
+    <div class="form">
+        <form action="/submit-encuesta" method="post">
+            <label for="p1">¿Qué tan satisfecho estás con nuestro servicio?</label><br>
+            <select id="p1" name="p1">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <label for="p2">¿La IA debería de tener límites éticos más estrictos?</label><br>
+            <select id="p2" name="p2">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+            
+            <label for="p3">¿La IA podría ayudar a resolver problemas globalizados como el cambio climatico, la pobreza..etc?</label><br>
+            <select id="p3" name="p3">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <label for="p4">¿Crees que la IA será una herramienta al cual los humanos dependan demasiado en para hacer mejor su vida cotidiana?</label><br>
+            <select id="p4" name="p4">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <label for="p5">¿Crees que el gobierno debería de regular más el desarrollo de la IA para proteger a los ciudadanos o eso solo frena la innovación?</label><br>
+            <select id="p5" name="p5">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <label for="p6">¿Crees que la IA hace de la educación y trabajo más accesible y personalizado?</label><br>
+            <select id="p6" name="p6">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <label for="p7">¿La IA puede ayudarte a detectar o prevenir delitos?</label><br>
+            <select id="p7" name="p7">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+            <label for="p8">¿Es posible que a largo plazo la IA contribuya a mejorará la calidad de vida o crees que podría ser una amenaza si sale de control?</label><br>
+            <select id="p8" name="p8">
+                <option>Elige una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select><br><br>
+
+
+            <label for="comentarios">Comentarios adicionales:</label><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <a class="boton-flotante" href="ChatBot.html"><img src="img/bot.jpg" alt="Problema al cargar la imagen"></a>
+	<p class="text-flotante">¡Habla con el ChatBot!</p>
+
+
+    <footer>
+		<p>
+			© 2025 Todo los derechos reservados por Equipo de trabajo número 2
+		</p>
+	</footer>
+    
+</body>
+</html>

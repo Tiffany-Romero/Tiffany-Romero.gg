@@ -1,0 +1,121 @@
+*{
+    font-family: cursive;
+}
+
+.hall{
+    text-decoration: none;
+color: black;
+padding: 50px;
+font-family: cursive;
+font-size: 20px;
+color: black
+}
+.mall{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black
+}
+.pall{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black;
+margin-top: 5rem;
+}
+.jk{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black;
+margin-left: 5rem;
+}
+.lol{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black;
+margin-top: 5rem;
+}
+.jk2{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black;
+margin-right: 5rem;
+margin-right: 1rem;
+}
+.lol2{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black;
+margin-top: 5rem;
+}
+.jk3{
+    color: black;
+padding: 20px;
+font-family: cursive;
+font-size: 30px;
+color: black;
+margin-left: 5rem;
+}
+
+body{
+    margin: 0;
+}
+
+header{   
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    background-color: rgb(41, 155, 248);
+    align-items: center;
+    padding: 15px;
+}
+
+.logo{
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+
+    img{
+        height: 60px;
+        padding: 9px;
+    }
+
+    p{
+        font-size: 25px;
+        font-weight: bold;
+        padding: 9px;
+    }
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    font-family: cursive;
+    font-size: 20px;
+    color: black;
+    
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+}

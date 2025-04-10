@@ -1,0 +1,47 @@
+body {
+    font-family: cursive;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 28px;
+    color: #000;
+}
+
+section p {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+ul {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.section-content img {
+    width: 150px;
+}

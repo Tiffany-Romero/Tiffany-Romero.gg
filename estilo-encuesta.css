@@ -1,0 +1,31 @@
+body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+
+.encuesta-header{
+    background-color: #4a6fa5;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+form{
+    width: 600px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.form{
+    justify-items: center;
+}

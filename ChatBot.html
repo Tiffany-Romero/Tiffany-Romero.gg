@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='estilo-bot.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilo-header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilo-footer.css'>
+
+    <link rel="icon" href="img/logo.png">
+
+
+</head>
+<body>
+    <header>
+		<a href="Index.html" class="logo">
+			<img src="img/logo.png" alt="Proble al cargar la imagen">
+			<p>La Inteligencia Artificial</p>
+		</a>
+		<!--Menu de navegación-->
+
+		<nav>
+			<a href="Index.html" class="nav-link">Inicio</a>
+			<a href="aplicaion-IA.html" class="nav-link">Aplicaciones de la IA</a>
+			<a href="Dilemas_eticos.html" class="nav-link">Dilemas Éticos</a>
+			<a href="Encuesta.html" class="nav-link">Encuesta</a>
+		</nav>	
+	</header>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            ChatBot
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="welcome-message">
+                ¡Bienvenido al ChatBot! Selecciona una opción o escribe tu pregunta.
+            </div>
+            <div class="options-container">
+                <button class="option-button">¡Hola!</button>
+                <button class="option-button">¿Qué puedes hacer?</button>
+                <button class="option-button">¿Cuando se creo la primer IA?</button>
+                <button class="option-button">Información</button>
+                <button class="option-button">Gracias</button>
+                <button class="option-button">Adios</button>
+
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Preguntas y respuestas predeterminadas
+        const respuestas = {
+            "hola": "¡Hola! ¿En qué puedo ayudarte hoy?",
+            "qué puedes hacer": "Puedo responder preguntas frecuentes sobre nuestros información y formas de contacto.",
+            "información":"Esta pagina fue creada por estudiantes de ¡Superate! Grupo Q, en el 2025, como parte de un proyecto.",
+            "gracias": "¡De nada! ¿Hay algo más en lo que pueda ayudarte?",
+            "adios": "¡Hasta luego! Que tengas un buen día.",
+            "cuando se creo la primer ia": "El primer trabajo que ahora se reconoce como IA fue realizado por Warren McCulloch y Walter Pits en 1943. Ellos propusieron un modelo de neuronas artificiales. Publicaron Un cálculo lógico de ideas inmanentes en la actividad nerviosa",
+        };
+
+        document.getElementById('send-button').addEventListener('click', enviarMensaje);
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                enviarMensaje();
+            }
+        });
+
+        // Agregar eventos a los botones de opciones
+        document.querySelectorAll('.option-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const pregunta = this.textContent;
+                agregarMensaje(pregunta, 'user-message');
+                setTimeout(() => {
+                    responderPregunta(pregunta);
+                }, 500);
+            });
+        });
+
+        function enviarMensaje() {
+            const inputElement = document.getElementById('user-input');
+            const mensaje = inputElement.value.trim();
+            
+            if (mensaje !== '') {
+                agregarMensaje(mensaje, 'user-message');
+                inputElement.value = '';
+                
+                // Simular un pequeño retraso antes de responder
+                setTimeout(() => {
+                    responderPregunta(mensaje);
+                }, 500);
+            }
+        }
+
+        function agregarMensaje(texto, tipo) {
+            const mensajesContainer = document.getElementById('chat-messages');
+            const mensajeElement = document.createElement('div');
+            mensajeElement.classList.add('message', tipo);
+            mensajeElement.textContent = texto;
+            mensajesContainer.appendChild(mensajeElement);
+            
+            // Desplazarse hacia abajo para mostrar el mensaje más reciente
+            mensajesContainer.scrollTop = mensajesContainer.scrollHeight;
+        }
+
+        function responderPregunta(pregunta) {
+            // Convertir a minúsculas para hacer la comparación insensible a mayúsculas/minúsculas
+            const preguntaLower = pregunta.toLowerCase();
+            
+            // Buscar respuesta en nuestro objeto de respuestas predefinidas
+            let respuesta = "Lo siento, no entiendo esa pregunta. ¿Podrías reformularla?";
+            
+            for (const clave in respuestas) {
+                if (preguntaLower.includes(clave)) {
+                    respuesta = respuestas[clave];
+                    break;
+                }
+            }
+            
+            agregarMensaje(respuesta, 'bot-message');
+            
+            // Si no entendió la pregunta, mostrar opciones de ayuda
+            if (respuesta.includes("no entiendo")) {
+                setTimeout(() => {
+                    agregarMensaje("Estas son algunas preguntas que puedo responder:", 'bot-message');
+                    const opcionesContainer = document.createElement('div');
+                    opcionesContainer.classList.add('options-container');
+                    
+                    ['¿Qué puedes hacer?', 'Horarios de atención', 'Contacto'].forEach(opcion => {
+                        const boton = document.createElement('button');
+                        boton.classList.add('option-button');
+                        boton.textContent = opcion;
+                        boton.addEventListener('click', function() {
+                            agregarMensaje(opcion, 'user-message');
+                            setTimeout(() => {
+                                responderPregunta(opcion);
+                            }, 500);
+                        });
+                        opcionesContainer.appendChild(boton);
+                    });
+                    
+                    document.getElementById('chat-messages').appendChild(opcionesContainer);
+                    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+                }, 800);
+            }
+        }
+    </script>
+    
+    	<footer>
+            <p>
+                © 2025 Todo los derechos reservados por Equipo de trabajo número 2
+            </p>
+        </footer>
+</body>
+</html>
